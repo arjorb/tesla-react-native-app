@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "scheme": "acme",
+    "web": {
+      "bundler": "metro"
+    },
+    "name": "tesla-react-native-app",
+    "slug": "tesla-react-native-app"
+  }
+}
