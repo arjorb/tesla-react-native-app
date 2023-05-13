@@ -1,5 +1,6 @@
-import { StyleSheet, Text, View } from "react-native";
+import { StyleSheet, Text, View, Image } from "react-native";
 import { FontAwesome } from '@expo/vector-icons';
+import car from '../assets/images/car.png'
 export default function Page() {
   return (
     <View style={styles.container}>
@@ -10,6 +11,8 @@ export default function Page() {
         </View>
         <FontAwesome name="user-circle" size={24} color="gray" />
       </View>
+
+      <Image source={car} style={styles.image} resizeMode="contain"/>
     </View>
   );
 }
@@ -35,4 +38,8 @@ const styles = StyleSheet.create({
     color: "gray",
     fontWeight:'500'
   },
+  image:{
+    width:'100%',
+    height:300,
+  }
 });
