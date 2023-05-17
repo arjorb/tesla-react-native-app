@@ -1,6 +1,8 @@
-import { StyleSheet, Text, View, Image } from "react-native";
+import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import { FontAwesome, Entypo, MaterialCommunityIcons, FontAwesome5, Ionicons, MaterialIcons } from "@expo/vector-icons";
-import car from '../assets/images/car.png'
+import car from "../assets/images/car.png";
+import menuOptions from "../assets/menuOptions";
+
 export default function Page() {
   return (
     <View style={styles.container}>
@@ -21,11 +23,16 @@ export default function Page() {
         <Ionicons name="car-sport-sharp" size={26} color="gray" />
       </View>
 
-      <View style={styles.optionRow}>
-        <MaterialCommunityIcons name="car" size={26} color="gray" />
-        <Text style={styles.optionText}>Controls</Text>
-        <MaterialIcons name="keyboard-arrow-right" size={24} color="gray" style={{ marginLeft: "auto" }} />
-      </View>
+      <FlatList
+        data={menuOptions}
+        renderItem={({ item }) => (
+          <View style={styles.optionRow}>
+            <MaterialCommunityIcons name={item.iconName} size={26} color="gray" />
+            <Text style={styles.optionText}>{item.name}</Text>
+            <MaterialIcons name="keyboard-arrow-right" size={24} color="gray" style={{ marginLeft: "auto" }} />
+          </View>
+        )}
+      />
     </View>
   );
 }
