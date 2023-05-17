@@ -2,8 +2,8 @@ import { StyleSheet, Text, View, Image, FlatList } from "react-native";
 import { FontAwesome, Entypo, MaterialCommunityIcons, FontAwesome5, Ionicons, MaterialIcons } from "@expo/vector-icons";
 import car from "../assets/images/car.png";
 import menuOptions from "../assets/menuOptions";
-import MenuOption from "./components/MenuOption";
-import Controls from "./components/Controls";
+import MenuOption from "../components/MenuOption";
+import Controls from "../components/Controls";
 
 export default function Page() {
   return (
