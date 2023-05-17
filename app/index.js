@@ -3,6 +3,7 @@ import { FontAwesome, Entypo, MaterialCommunityIcons, FontAwesome5, Ionicons, Ma
 import car from "../assets/images/car.png";
 import menuOptions from "../assets/menuOptions";
 import MenuOption from "./components/MenuOption";
+import Controls from "./components/Controls";
 
 export default function Page() {
   return (
@@ -16,14 +17,7 @@ export default function Page() {
       </View>
 
       <Image source={car} style={styles.image} resizeMode="contain" />
-
-      <View style={styles.controls}>
-        <Entypo name="lock" size={26} color="gray" />
-        <MaterialCommunityIcons name="fan" size={26} color="gray" />
-        <FontAwesome5 name="bolt" size={26} color="gray" />
-        <Ionicons name="car-sport-sharp" size={26} color="gray" />
-      </View>
-
+      <Controls />
       <FlatList data={menuOptions} showsVerticalScrollIndicator={false} renderItem={MenuOption} />
     </View>
   );
@@ -53,21 +47,5 @@ const styles = StyleSheet.create({
   image: {
     width: "100%",
     height: 300,
-  },
-  controls: {
-    flexDirection: "row",
-    justifyContent: "space-around",
-    marginVertical: 20,
-  },
-  optionRow: {
-    flexDirection: "row",
-    alignItems: "center",
-    marginVertical: 20,
-  },
-  optionText: {
-    color: "#eee",
-    fontSize: 18,
-    fontWeight: "bold",
-    marginLeft: 10,
   },
 });
