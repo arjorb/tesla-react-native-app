@@ -25,6 +25,7 @@ export default function Page() {
 
       <FlatList
         data={menuOptions}
+        showsVerticalScrollIndicator={false}
         renderItem={({ item }) => (
           <View style={styles.optionRow}>
             <MaterialCommunityIcons name={item.iconName} size={26} color="gray" />
@@ -65,6 +66,7 @@ const styles = StyleSheet.create({
   controls: {
     flexDirection: "row",
     justifyContent: "space-around",
+    marginVertical: 20,
   },
   optionRow: {
     flexDirection: "row",
