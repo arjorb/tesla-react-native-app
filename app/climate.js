@@ -8,6 +8,14 @@ const ClimateScreen = () => {
   const router = useRouter();
   const [temperature, setTemperature] = useState(70);
 
+  const handleIncrease = () => {
+    setTemperature((prev) => (prev += 1));
+  };
+
+  const handleDecrease = () => {
+    setTemperature((prev) => (prev -= 1));
+  };
+
   return (
     <View style={styles.container}>
       <Image source={climateImage} style={styles.image} resizeMode="cover" />
@@ -26,9 +34,9 @@ const ClimateScreen = () => {
           </View>
 
           <View style={styles.temperatureContainer}>
-            <Entypo name="chevron-left" size={30} color="gray" />
+            <Entypo onPress={handleDecrease} name="chevron-left" size={30} color="gray" />
             <Text style={styles.temperatureText}>{temperature}°</Text>
-            <Entypo name="chevron-right" size={30} color="gray" />
+            <Entypo onPress={handleIncrease} name="chevron-right" size={30} color="gray" />
           </View>
 
           <View style={styles.iconButtonContainer}>
