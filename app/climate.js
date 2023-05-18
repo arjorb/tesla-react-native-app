@@ -7,6 +7,7 @@ import { useState } from "react";
 const ClimateScreen = () => {
   const router = useRouter();
   const [temperature, setTemperature] = useState(70);
+  const [on, setOn] = useState(false);
 
   const handleIncrease = () => {
     setTemperature((prev) => (prev += 1));
@@ -28,10 +29,10 @@ const ClimateScreen = () => {
         <Text style={styles.label}>Interior 74°F - Exterior 66°F</Text>
 
         <View style={styles.controlsRow}>
-          <View style={styles.iconButtonContainer}>
-            <MaterialCommunityIcons name="power" size={42} color="white" />
-            <Text style={styles.iconButtonText}>On</Text>
-          </View>
+          <Pressable onPress={() => setOn((prev) => !prev)} style={styles.iconButtonContainer}>
+            <MaterialCommunityIcons name="power" size={42} color={on ? "white" : "grey"} />
+            <Text style={styles.iconButtonText}>{on ? "On" : "Off"}</Text>
+          </Pressable>
 
           <View style={styles.temperatureContainer}>
             <Entypo onPress={handleDecrease} name="chevron-left" size={30} color="gray" />
